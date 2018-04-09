@@ -1,4 +1,4 @@
-name := """play-java-jpa-example"""
+name := """cloud"""
 
 version := "1.0-SNAPSHOT"
 
@@ -20,6 +20,14 @@ lazy val `nova` =  (project in file("src/nova")).enablePlugins(PlayJava).
   )
 
 lazy val `identity` =  (project in file("src/identity")).enablePlugins(PlayJava).
+  aggregate(`common`).
+  dependsOn(`common`).
+  settings(publishArtifact in (Compile,packageDoc) :=false,
+    publishArtifact in packageDoc :=false,
+    sources in (Compile,doc) :=Seq.empty
+  )
+
+lazy val `manila` =  (project in file("src/manila")).enablePlugins(PlayJava).
   aggregate(`common`).
   dependsOn(`common`).
   settings(publishArtifact in (Compile,packageDoc) :=false,
