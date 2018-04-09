@@ -1,2 +1,2 @@
 
-GET          /sharefiles
+GET          /sharefiles                                           com.cloud.manila.controllers.ManilaController.queryManilaList()

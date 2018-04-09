@@ -6,8 +6,8 @@ scalaVersion := "2.11.11"
 Common.settings
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava,PlayEbean).
-  aggregate(`identity`).
-  dependsOn(`identity`)
+  aggregate(`identity`,`manila`).
+  dependsOn(`identity`,`manila`)
 
 
 
